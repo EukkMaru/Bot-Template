@@ -15,5 +15,10 @@ bot.on("message", (message) => {
         }
         return message.channel.send(content.toString());
     }
-    
+    var command;
+    if(message.content.startsWith(config.prefix)){
+        command = message.content.slice(config.prefix.length);
+    } else {
+        command = undefined;
+    }
 });
